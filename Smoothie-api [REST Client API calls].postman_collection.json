@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "f1710e9a-b7d5-4f7d-85a5-ff9b7fb5d3f5",
+		"name": "Smoothie-api [REST Client API calls]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ingredients",
+			"item": [
+				{
+					"name": "Get all ingredients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/ingredients/get-all-ingredients",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"get-all-ingredients"
+							]
+						},
+						"description": "This endpoint will return all ingredients \n\n```\n[\n   {\n      \"_id\": string,\n      \"name\": string\n   }\n]\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get an ingredient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/ingredients/get-ingredient/63a468cc4b0758581624a545",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"get-ingredient",
+								"63a468cc4b0758581624a545"
+							]
+						},
+						"description": "This endpoint returns an ingredient based on the id specified\n\n```\n{\n   \"_id\": string,\n   \"name\": string\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Update an ingredient",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NmQ3YTVhODk3YzgwMmQ5MzIyZTciLCJpYXQiOjE2NzE1MzczNTh9.yN43hsLzqbmr30Il8altIpWVYS0rjAVOCbkCCD_w63M",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Verse babyspinazie\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/ingredients/update-ingredient/63a468cc4b0758581624a545",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"update-ingredient",
+								"63a468cc4b0758581624a545"
+							]
+						},
+						"description": "This endpoint updates the ingredient for the id specified\n\n```\n{\n   \"_id\": string,\n   \"name\": string\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Create an ingredient",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E0NjVmMzRiMDc1ODU4MTYyNGE1NDAiLCJpYXQiOjE2NzE3MTgzODd9.fmWGs5QuP7gCnFjjGLWMIM68eNcxE_YFJna0VWIQ_UM",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New ingredient!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/ingredients/create-ingredient",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"create-ingredient"
+							]
+						},
+						"description": "This endpoint creates a new ingredient and returns the newly created ingredient\n\n```\n{\n   \"_id\": string,\n   \"name\": string\n   \"__v\": int\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an ingredient [ADMIN]",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkyMGQ0ZTAyMDk3MmY2MTQ3OTI0NjQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzE1MzkwNTV9.vhCmBb8HPxfoi8aZR0sXUvqpmm0SS26Ua6dbZNCHPJk",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/ingredients/delete-ingredient/63b68a4f14a0173795acf6bd",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"delete-ingredient",
+								"63b68a4f14a0173795acf6bd"
+							]
+						},
+						"description": "This endpoint deletes an ingredient for the specified id and returns the deleted ingredient\n\n```\n{\n   \"_id\": string,\n   \"name\": string\n}\n```"
+					},
+					"response": []
+				}
+			],
+			"description": "The ingredients used to create all sorts of smoothies"
+		},
+		{
+			"name": "Smoothies",
+			"item": [
+				{
+					"name": "Get all smoothies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/smoothies/get-all-smoothies",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"smoothies",
+								"get-all-smoothies"
+							]
+						},
+						"description": "This endpoint will return all smoothies\n\n```\n[\n   {\n      \"name\": string,\n      \"ingredients\":[\n         {\n            \"ingredient\": string,\n            \"amount :\"int,\n            \"units\": string,\n            \"_id\": string\n         }\n      ],\n      \"steps\":[\n          string \n      ],\n      \"_id\": string,\n      \"__v\": int\n   }\n]\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a smoothie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/smoothies/get-smoothie/63a469654b0758581624a54e",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"smoothies",
+								"get-smoothie",
+								"63a469654b0758581624a54e"
+							]
+						},
+						"description": "This endpoint will return the smoothie for the specified id\n\n```\n{\n    \"name\": string,\n    \"ingredients\": [\n        {\n            \"ingredient\": string,\n            \"amount\": int,\n            \"units\": string,\n            \"_id\": string\n        }\n    ],\n    \"steps\": [\n         string\n    ],\n    \"_id\": string,\n    \"__v\": int\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a smoothie",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-auth-token-normal}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ananas-Spinazie-Smoothie\",\r\n    \"ingredients\": [\r\n        {\r\n            \"ingredient\": \"63a1ab954143c757499597cb\",\r\n            \"amount\": 50,\r\n            \"units\": \"g\"\r\n        },\r\n        {\r\n            \"ingredient\": \"63a1aba34143c757499597cf\",\r\n            \"amount\": 2,\r\n            \"units\": \"stuks\"\r\n        },\r\n        {\r\n            \"ingredient\": \"63a1abae4143c757499597d1\",\r\n            \"amount\": 2,\r\n            \"units\": \"stuks\"\r\n        },\r\n        {\r\n            \"ingredient\": \"63a1ab9b4143c757499597cd\",\r\n            \"amount\": 75,\r\n            \"units\": \"ml\"\r\n        }\r\n    ],\r\n    \"steps\": [\r\n        \"Snijd de ananasschijven in kleine stukjes\", \r\n        \"Pluk de peterselie van de takjes\", \r\n        \"Doe het water en daarna de ananas, de spinazie en de peterselie in de mengbeker en sluit deze met de meshouder\", \r\n        \"Meng alles zo lang tot alle ingredienten zijn fijngesneden en vermengd\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/smoothies/update-smoothie/63a469654b0758581624a54e",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"smoothies",
+								"update-smoothie",
+								"63a469654b0758581624a54e"
+							]
+						},
+						"description": "This endpoint will update a smoothie for the specified id and return the updated smoothie.\n\n```\n{\n    \"name\": string,\n    \"ingredients\": [\n        {\n            \"ingredient\": string,\n            \"amount\": int,\n            \"units\": string,\n            \"_id\": string\n        }\n    ],\n    \"steps\": [\n         string\n    ],\n    \"_id\": string,\n    \"__v\": int\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a smoothie",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-auth-token-normal}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New smoothie!\",\r\n    \"ingredients\": [\r\n        {\r\n            \"ingredient\": \"63a468cc4b0758581624a545\",\r\n            \"amount\": 50,\r\n            \"units\": \"g\"\r\n        },\r\n        {\r\n            \"ingredient\": \"63a468ee4b0758581624a549\",\r\n            \"amount\": 2,\r\n            \"units\": \"stuks\"\r\n        },\r\n        {\r\n            \"ingredient\": \"63a468f64b0758581624a54b\",\r\n            \"amount\": 2,\r\n            \"units\": \"stuks\"\r\n        },\r\n        {\r\n            \"ingredient\": \"63a468e74b0758581624a547\",\r\n            \"amount\": 75,\r\n            \"units\": \"ml\"\r\n        }\r\n    ],\r\n    \"steps\": [\r\n        \"Snijd de ananasschijven in kleine stukjes\", \r\n        \"Pluk de peterselie van de takjes\", \r\n        \"Doe het water en daarna de ananas, de spinazie en de peterselie in de mengbeker en sluit deze met de meshouder\", \r\n        \"Meng alles zo lang tot alle ingredienten zijn fijngesneden en vermengd\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/smoothies/create-smoothie",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"smoothies",
+								"create-smoothie"
+							]
+						},
+						"description": "This endpoint creates a smoothie and returns the newly created smoothie\n\n```\n{\n    \"name\": string,\n    \"ingredients\": [\n        {\n            \"ingredient\": string,\n            \"amount\": int,\n            \"units\": string,\n            \"_id\": string\n        }\n    ],\n    \"steps\": [\n         string\n    ],\n    \"_id\": string,\n    \"__v\": int\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a smoothie [ADMIN]",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-auth-token-admin}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/smoothies/delete-smoothie/63b6899b14a0173795acf697",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"smoothies",
+								"delete-smoothie",
+								"63b6899b14a0173795acf697"
+							]
+						},
+						"description": "This endpoint will delete a smoothie for the specified id and return the deleted smoothie.\n\n```\n{\n    \"name\": string,\n    \"ingredients\": [\n        {\n            \"ingredient\": string,\n            \"amount\": int,\n            \"units\": string,\n            \"_id\": string\n        }\n    ],\n    \"steps\": [\n         string\n    ],\n    \"_id\": string,\n    \"__v\": int\n}\n```"
+					},
+					"response": []
+				}
+			],
+			"description": "All smoothies that can be made with the ingredients and steps included."
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get your own account information",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-auth-token-normal}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/users/get-me",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"get-me"
+							]
+						},
+						"description": "This endpoint will return the user information for the logged in user.\n\n```\n{\n     \"name\": string,\n     \"email\": string\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Update your own account information",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-auth-token-normal}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bert Van Hecke\",\r\n    \"email\": \"bert.smoothieapi@smoothie.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/users/update-user",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"update-user"
+							]
+						},
+						"description": "This endpoint will update the user information for the logged in user and return the updated user information.\n\n```\n{\n     \"_id\": string,\n     \"name\": string,\n     \"email\": string,\n     \"__v\": int\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users information [ADMIN]",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-auth-token-admin}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/users/get-all-users",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"get-all-users"
+							]
+						},
+						"description": "This endpoint will return all the registered users.\n\n```\n[\n   {\n      \"_id\": string,\n      \"name\": string,\n      \"email\": string,\n      \"__v\": int\n   }\n]\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user [ADMIN]",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-auth-token-admin}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/users/delete-user/63b688fa14a0173795acf67b",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"delete-user",
+								"63b688fa14a0173795acf67b"
+							]
+						},
+						"description": "This endpoint will delete the user information for the specified user id and return the deleted user.\n\n```\n{\n   \"_id\": string,\n   \"name\": string,\n   \"email\": string,\n   \"__v\": int\n}\n```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"example2@smoothie.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "This endpoint will log the user in."
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-auth-token-normal}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "x-auth-token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						},
+						"description": "This endpoint will log the user out."
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Example\",\r\n    \"email\": \"example2@smoothie.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.79.238.1:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"34",
+								"79",
+								"238",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						},
+						"description": "This endpoint will register the user."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
